@@ -1,15 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>SKATE BOY</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/index.css">
+    <meta charset="utf-8">
+    <title>Log in with your account</title>
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/style.css">
+    <link rel="stylesheet" href="../../resources/css/admin.css">
     <link rel="stylesheet" href="../../resources/css/index.css">
 </head>
+
 <body>
 
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -22,13 +23,11 @@
             <img src="../../resources/img/imgIndex/16.jpg" alt="" height="60px">
             <img src="../../resources/img/imgIndex/17.jpg" alt="" height="60px">
             <img src="../../resources/img/imgIndex/18.jpg" alt="" height="60px">
-
             <font style="vertical-align: inherit;"></font></div>
-
     </div>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Главная
-            страница</font></font></a>
+        <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">Главная страница</font></font></a>
 
         <a class="p-2 text-dark" href="/shop"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Каталог</font></font></a>
@@ -43,17 +42,36 @@
             style="vertical-align: inherit;">Выход</font></font></a>
 </div>
 
-<main role="main">
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="display-3">SKATE BOY</h1>
-            <p>это место, где живут скейтбордингом. Ты не можешь купить счастье - но ты можешь купить скейтборд)</p>
-        </div>
-    </div>
-    <div class="logo">
-        <a href="/shop"><img src="../../resources/img/imgIndex/3.jpg" alt=""></a>
-    </div>
-</main>
+<div>
+    <table>
+        <thead>
+        <th>ID</th>
+        <th>UserName</th>
+        <th>Password</th>
+        <th>Roles</th>
+        </thead>
+        <c:forEach items="${allUsers}" var="user">
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.username}</td>
+                <td>${user.password}</td>
+                <td>
+                    <c:forEach items="${user.roles}" var="role">${role.name}; </c:forEach>
+                </td>
+                <td>
+                    <form action="${pageContext.request.contextPath}/admin" method="post">
+                        <input type="hidden" name="userId" value="${user.id}"/>
+                        <input type="hidden" name="action" value="delete"/>
+                        <button type="submit">Delete</button>
+
+                    </form>
+
+                </td>
+
+            </tr>
+        </c:forEach>
+    </table>
+</div>
 
 </body>
 </html>
