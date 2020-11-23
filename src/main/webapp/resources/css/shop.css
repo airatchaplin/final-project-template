@@ -10420,6 +10420,11 @@ a.text-dark:focus, a.text-dark:hover {
     width: 327px;
 }
 
+a:-webkit-any-link {
+    text-decoration: none;
+    color: black;
+}
+
 a.bot1 {
     background: linear-gradient(to bottom, #FFFFFF, #FFFFFF) #FFFFFF repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;

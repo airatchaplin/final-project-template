@@ -10,10 +10,10 @@ public class Skateboard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
     private int price;
     private Double size;
+
     @Size(max = 1000)
     private String description;
     private String image1;

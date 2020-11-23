@@ -6,8 +6,14 @@
 <head>
     <meta charset="utf-8">
     <title>Каталог</title>
-
     <link rel="stylesheet" href="../../resources/css/shop.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/icon/favicon-16x16.png">
+    <link rel="manifest" href="../../resources/icon/site.webmanifest">
+    <link rel="mask-icon" href="../../resources/icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
 </head>
 <body>
@@ -39,7 +45,7 @@
         <a class="p-2 text-dark" href="/admin"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Админ</font></font></a>
 
-        <a class="p-2 text-dark" href="/admin"><font style="vertical-align: inherit;"><font
+        <a class="p-2 text-dark" href="/username=${pageContext.request.userPrincipal.name}"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;"> ${pageContext.request.userPrincipal.name} </font></font></a>
 
 

@@ -35,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").hasRole("USER")
                 //Доступ разрешен всем пользователей
                 .antMatchers( "/resources/**").permitAll()
+                .antMatchers("/403").permitAll()
                 //Все остальные страницы требуют аутентификации
                 .anyRequest().authenticated()
                 .and()

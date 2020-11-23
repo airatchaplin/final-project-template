@@ -1,7 +1,6 @@
 package com.epam.rd.izh.entity;
 
 import org.springframework.security.core.GrantedAuthority;
-
 import javax.persistence.*;
 import java.util.Set;
 

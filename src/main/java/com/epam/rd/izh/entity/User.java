@@ -12,6 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "t_user")
 public class User implements UserDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +24,6 @@ public class User implements UserDetails {
     private String passwordConfirm;
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
-
 
     public Long getId() {
         return id;

@@ -10578,7 +10578,7 @@ a.text-dark:focus, a.text-dark:hover {
 }
 
 a.bot1 {
-    background: linear-gradient(to bottom, #FFFFFF, #E6E6E6) #F5F5F5 repeat-x;
+    background: linear-gradient(to bottom, #FFFFFF, #FFFFFF) #FFFFFF repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
     border-radius: 4px;
     border-style: solid;
@@ -10643,9 +10643,11 @@ a.bot1:hover:before {
 }
 
 .item{
-    width: 590px
+    width: 590px;
+    margin-right: 250px;
+    margin-top: 40px;
 }
 
 td{
-    padding-left: 300px;
+    padding-left: 200px;
 }

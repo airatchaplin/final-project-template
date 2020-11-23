@@ -5,9 +5,16 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Log in with your account</title>
+    <title>Логин</title>
     <link rel="stylesheet" href="../../resources/css/login.css">
     <link rel="stylesheet" href="../../resources/css/index.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../resources/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../resources/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../resources/icon/favicon-16x16.png">
+    <link rel="manifest" href="../../resources/icon/site.webmanifest">
+    <link rel="mask-icon" href="../../resources/icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -60,9 +67,10 @@
                 <input name="password" type="password" placeholder="Введите пароль"/>
             </div>
 
-            <div class="but">
-                    <button type="submit">Войти</button>
-                    <button type="submit"><a href="/registration">Зарегистрироваться</a></button>
+
+            <div >
+                    <button class="but" type="submit">Войти</button>
+                    <button class="but" type="submit"><a href="/registration">Зарегистрироваться</a></button>
             </div>
         </div>
     </form>

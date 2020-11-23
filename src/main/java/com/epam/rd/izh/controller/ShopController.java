@@ -9,9 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
-import java.util.Optional;
-
 @Controller
 public class ShopController {
 
@@ -30,9 +27,8 @@ public class ShopController {
 
     @GetMapping("/shop/id={id}")
     public String getItemShop(@PathVariable(value = "id") Long id, Model model) {
-        model.addAttribute("findUserById",skateboardService.findUserById(id));
+        model.addAttribute("findSkateboardById",skateboardService.findSkateboardById(id));
         return "itemShop";
     }
-
 
 }
