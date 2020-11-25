@@ -12,9 +12,9 @@ public class SkateboardService {
     @Autowired
     SkateboardRepository skateboardRepository;
 
-
     public Skateboard findSkateboardById(Long userId) {
         Optional<Skateboard> skateboard = skateboardRepository.findById(userId);
         return skateboard.orElse(new Skateboard());
     }
+
 }

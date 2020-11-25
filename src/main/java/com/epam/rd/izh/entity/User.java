@@ -25,6 +25,17 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Skateboard> skateboard;
+
+    public List<Skateboard> getSkateboard() {
+        return skateboard;
+    }
+
+    public void setSkateboard(List<Skateboard> skateboard) {
+        this.skateboard = skateboard;
+    }
+
     public Long getId() {
         return id;
     }
@@ -91,4 +102,6 @@ public class User implements UserDetails {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
 }

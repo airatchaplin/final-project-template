@@ -20,8 +20,6 @@
 
 <body>
 
-<body>
-
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
     <div class="img__logo">
         <div class="my-0 mr-md-auto font-weight-normal">
@@ -34,18 +32,15 @@
             <img src="../../resources/img/imgIndex/18.jpg" alt="" height="60px">
 
             <font style="vertical-align: inherit;"></font></div>
-
-
     </div>
+
     <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Главная
             страница</font></font></a>
 
-
         <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Каталог</font></font></a>
-
 
         <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Админ</font></font></a>
@@ -83,4 +78,5 @@
 
 </div>
 </body>
+
 </html>

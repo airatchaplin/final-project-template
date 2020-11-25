@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <!DOCTYPE html>
@@ -46,8 +47,7 @@
                 style="vertical-align: inherit;">Админ</font></font></a>
 
         <a class="p-2 text-dark" href="/username=${pageContext.request.userPrincipal.name}"><font style="vertical-align: inherit;"><font
-                style="vertical-align: inherit;"> ${pageContext.request.userPrincipal.name} </font></font></a>
-
+                style="vertical-align: inherit;"> Корзина </font></font></a>
     </nav>
     <a class="btn btn-outline-primary" href="/logout"><font style="vertical-align: inherit;"><font
             style="vertical-align: inherit;">Выход</font></font></a>
@@ -58,45 +58,39 @@
     <tr>
         <td>
             <div class="container">
-
-                <div class="mySlides">
-                    <img src="${findSkateboardById.image1}" style="width:100%">
-                </div>
-
-                <div class="mySlides">
-                    <img src="${findSkateboardById.image2}" style="width:100%">
-                </div>
-
+                <div class="mySlides"><img src="${findSkateboardById.image1}" style="width:100%"></div>
+                <div class="mySlides"><img src="${findSkateboardById.image2}" style="width:100%"></div>
 
                 <a class="prev" onclick="plusSlides(-1)">❮</a>
                 <a class="next" onclick="plusSlides(1)">❯</a>
 
                 <div class="row">
                     <div class="column">
-                        <img class="demo cursor" src="${findSkateboardById.image1}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                        <img class="demo cursor" src="${findSkateboardById.image1}" style="width:100%"
+                             onclick="currentSlide(1)" alt="The Woods">
                     </div>
                     <div class="column">
-                        <img class="demo cursor" src="${findSkateboardById.image2}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                        <img class="demo cursor" src="${findSkateboardById.image2}" style="width:100%"
+                             onclick="currentSlide(2)" alt="Cinque Terre">
                     </div>
                 </div>
             </div>
         </td>
         <td>
-            <div class="item" >
-            <h2>${findSkateboardById.name}</h2><br>
-            <p >Цена: ${findSkateboardById.price} рублей</p><br>
-            <p >Размер: ${findSkateboardById.size}</p><br>
-            <p >Описание: ${findSkateboardById.description}</p><br>
+            <div class="item">
+                <h2>${findSkateboardById.name}</h2><br>
+                <p>Цена: ${findSkateboardById.price} рублей</p><br>
+                <p>Размер: ${findSkateboardById.size}</p><br>
+                <p>Описание: ${findSkateboardById.description}</p><br>
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                    </div>
-                    <a class="bot1" href="/shop/id=${findSkateboardById.id}"> Купить</a>
+                    <form:form method="POST" modelAttribute="addItemByUser" >
+                        <button class="but" type="submit" > Купить</button>
+                    </form:form>
                 </div>
-        </div>
+            </div>
         </td>
     </tr>
 </table>
-
 
 
 <script>
@@ -116,29 +110,23 @@
         var slides = document.getElementsByClassName("mySlides");
         var dots = document.getElementsByClassName("demo");
         var captionText = document.getElementById("caption");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        captionText.innerHTML = dots[slideIndex-1].alt;
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
     }
 </script>
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>

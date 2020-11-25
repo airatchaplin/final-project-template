@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <!DOCTYPE html>
@@ -7,6 +8,8 @@
     <meta charset="utf-8">
     <title>Личный кабинет</title>
     <link rel="stylesheet" href="../../resources/css/itemShop.css">
+    <link rel="stylesheet" href="../../resources/css/admin.css">
+
     <link rel="apple-touch-icon" sizes="180x180" href="../../resources/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../resources/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../resources/icon/favicon-16x16.png">
@@ -31,22 +34,19 @@
 
             <font style="vertical-align: inherit;"></font></div>
 
-
     </div>
     <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Главная
             страница</font></font></a>
 
-
         <a class="p-2 text-dark" href="/shop"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Каталог</font></font></a>
-
 
         <a class="p-2 text-dark" href="/admin"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Админ</font></font></a>
 
         <a class="p-2 text-dark" href="/username=${pageContext.request.userPrincipal.name}"><font style="vertical-align: inherit;"><font
-                style="vertical-align: inherit;"> ${pageContext.request.userPrincipal.name} </font></font></a>
+                style="vertical-align: inherit;"> Корзина </font></font></a>
 
     </nav>
     <a class="btn btn-outline-primary" href="/logout"><font style="vertical-align: inherit;"><font
@@ -54,8 +54,37 @@
 </div>
 
 <div>
-<h1>HEllo ${user.username}</h1>
-</div>
+<h1>Hello  ${user.username}</h1>
+
+    <div>
+        <table>
+            <thead >
+            <th>ID</th>
+            <th>SkateboardName</th>
+            <th>Size</th>
+            <th>Price</th>
+            </thead>
+            <c:forEach items="${user.skateboard}" var="skateboard">
+                <tr>
+                    <td >${skateboard.id}</td>
+                    <td >${skateboard.name}</td>
+                    <td >${skateboard.size}</td>
+                    <td >${skateboard.price}</td>
+
+                    <td>
+                        <form:form method="POST" modelAttribute="deleteItemByUser">
+
+                            <button class="but" type="submit">Delete</button>
+
+                        </form:form>
+
+                    </td>
+
+                </tr>
+            </c:forEach>
+        </table>
+    </div>
+
 
 
 

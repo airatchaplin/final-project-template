@@ -29,28 +29,20 @@
             <img src="../../resources/img/imgIndex/16.jpg" alt="" height="60px">
             <img src="../../resources/img/imgIndex/17.jpg" alt="" height="60px">
             <img src="../../resources/img/imgIndex/18.jpg" alt="" height="60px">
-
             <font style="vertical-align: inherit;"></font></div>
-
 
     </div>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Главная
-            страница</font></font></a>
-
-
+        <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;">Главная страница</font></font></a>
         <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Каталог</font></font></a>
-
-
         <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Админ</font></font></a>
     </nav>
     <a class="btn btn-outline-primary" href="/logout"><font style="vertical-align: inherit;"><font
             style="vertical-align: inherit;">Выход</font></font></a>
 </div>
-
-
 
 <sec:authorize access="isAuthenticated()">
     <% response.sendRedirect("/"); %>
@@ -62,15 +54,12 @@
             <div class="login">
                 <input name="username" type="text" placeholder="Введите логин"/>
             </div>
-
             <div class="login">
                 <input name="password" type="password" placeholder="Введите пароль"/>
             </div>
-
-
-            <div >
-                    <button class="but" type="submit">Войти</button>
-                    <button class="but" type="submit"><a href="/registration">Зарегистрироваться</a></button>
+            <div>
+                <button class="but" type="submit">Войти</button>
+                <button class="but" type="submit"><a href="/registration">Зарегистрироваться</a></button>
             </div>
         </div>
     </form>

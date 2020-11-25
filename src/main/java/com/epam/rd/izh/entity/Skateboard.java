@@ -19,6 +19,8 @@ public class Skateboard {
     private String image1;
     private String image2;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private User user;
 
     public Long getId() {
         return id;
@@ -52,6 +54,14 @@ public class Skateboard {
         this.size = size;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getImage1() {
         return image1;
     }
@@ -68,11 +78,11 @@ public class Skateboard {
         this.image2 = image2;
     }
 
-    public String getDescription() {
-        return description;
+    public User getUser() {
+        return user;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

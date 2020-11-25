@@ -29,11 +29,9 @@
             <img src="../../resources/img/imgIndex/16.jpg" alt="" height="60px">
             <img src="../../resources/img/imgIndex/17.jpg" alt="" height="60px">
             <img src="../../resources/img/imgIndex/18.jpg" alt="" height="60px">
-
             <font style="vertical-align: inherit;"></font></div>
 
     </div>
-
     <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Главная
             страница</font></font></a>
@@ -44,8 +42,9 @@
         <a class="p-2 text-dark" href="/admin"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Админ</font></font></a>
 
-        <a class="p-2 text-dark" href="/username=${pageContext.request.userPrincipal.name}"><font style="vertical-align: inherit;"><font
-                style="vertical-align: inherit;"> ${pageContext.request.userPrincipal.name} </font></font></a>
+        <a class="p-2 text-dark" href="/username=${pageContext.request.userPrincipal.name}"><font
+                style="vertical-align: inherit;"><font
+                style="vertical-align: inherit;"> Корзина </font></font></a>
     </nav>
     <a class="btn btn-outline-primary" href="/logout"><font style="vertical-align: inherit;"><font
             style="vertical-align: inherit;">Выход</font></font></a>

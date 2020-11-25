@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <!DOCTYPE html>
@@ -33,17 +34,14 @@
             <font style="vertical-align: inherit;"></font></div>
     </div>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font
-                style="vertical-align: inherit;">Главная страница</font></font></a>
-
+        <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Главная
+            страница</font></font></a>
         <a class="p-2 text-dark" href="/shop"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Каталог</font></font></a>
-
         <a class="p-2 text-dark" href="/admin"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Админ</font></font></a>
-
-        <a class="p-2 text-dark" href="/username=${pageContext.request.userPrincipal.name}"><font style="vertical-align: inherit;"><font
-                style="vertical-align: inherit;"> ${pageContext.request.userPrincipal.name} </font></font></a>
+        <a class="p-2 text-dark" href="/username=${pageContext.request.userPrincipal.name}"><font
+                style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Корзина </font></font></a>
     </nav>
     <a class="btn btn-outline-primary" href="/logout"><font style="vertical-align: inherit;"><font
             style="vertical-align: inherit;">Выход</font></font></a>
@@ -70,11 +68,8 @@
                         <input type="hidden" name="userId" value="${user.id}"/>
                         <input type="hidden" name="action" value="delete"/>
                         <button class="but" type="submit">Delete</button>
-
                     </form>
-
                 </td>
-
             </tr>
         </c:forEach>
     </table>
