@@ -1,12 +1,11 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Регистрация</title>
+    <title>Ошибка</title>
     <link rel="stylesheet" href="../../resources/css/login.css">
     <link rel="stylesheet" href="../../resources/css/index.css">
     <link rel="apple-touch-icon" sizes="180x180" href="../../resources/icon/apple-touch-icon.png">
@@ -30,53 +29,30 @@
             <img src="../../resources/img/imgIndex/16.jpg" alt="" height="60px">
             <img src="../../resources/img/imgIndex/17.jpg" alt="" height="60px">
             <img src="../../resources/img/imgIndex/18.jpg" alt="" height="60px">
+            <font style="vertical-align: inherit;"></font>
+        </div>
 
-            <font style="vertical-align: inherit;"></font></div>
     </div>
-
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font
-                style="vertical-align: inherit;">Главная
+        <a class="p-2 text-dark" href="/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Главная
             страница</font></font></a>
-
-        <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font
+        <a class="p-2 text-dark" href="/shop"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Каталог</font></font></a>
-
-        <a class="p-2 text-dark" href="/logout"><font style="vertical-align: inherit;"><font
+        <a class="p-2 text-dark" href="/admin"><font style="vertical-align: inherit;"><font
                 style="vertical-align: inherit;">Админ</font></font></a>
+        <a class="p-2 text-dark" href="/username=${pageContext.request.userPrincipal.name}"><font
+                style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Корзина </font></font></a>
     </nav>
     <a class="btn btn-outline-primary" href="/logout"><font style="vertical-align: inherit;"><font
             style="vertical-align: inherit;">Выход</font></font></a>
 </div>
 
+
+<h1 class="error-message" style="margin-top: 18%;font-size: 4.5rem">Ошибка при получении доступа!</h1>
 <div>
-    <form:form method="POST" modelAttribute="userForm">
-        <h1>Регистрация</h1>
-        <div class="login">
-            <form:input type="text" path="username" placeholder="Введите логин"
-                        autofocus="true"></form:input>
-            <div class="error">
-                <form:errors path="username"></form:errors>
-                    ${usernameError}
-            </div>
-        </div>
-        <div class="login">
-            <form:input type="password" path="password" placeholder="Введите пароль"></form:input>
-        </div>
-        <div class="login">
-            <form:input type="password" path="passwordConfirm"
-                        placeholder="Повторите пароль"></form:input>
-            <div class="error">
-                <form:errors path="password"></form:errors>
-                    ${passwordError}
-            </div>
-        </div>
-        <div >
-            <button class="but" type="submit">Зарегистрироваться</button>
-        </div>
-    </form:form>
-
+    <button class="but" type="submit"><a href="/">Вернуться</a></button>
 </div>
-</body>
 
+
+</body>
 </html>
